@@ -1,0 +1,2 @@
+yggdrasil::config_file: '/usr/local/etc/yggdrasil.conf'
+yggdrasil::adminlisten: 'unix:///var/run/yggdrasil.sock'
