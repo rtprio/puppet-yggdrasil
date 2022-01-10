@@ -1,7 +1,7 @@
 #
 class yggdrasil::config {
 
-  file { "/usr/local/etc/yggdrasil.conf": #yggdrasil::config_file:
+  file { $yggdrasil::config_file:
     ensure  => file,
     owner   => 0,
     group   => 0,
