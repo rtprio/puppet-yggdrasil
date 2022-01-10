@@ -1,2 +1,4 @@
 yggdrasil::config_file: '/usr/local/etc/yggdrasil.conf'
 yggdrasil::adminlisten: 'unix:///var/run/yggdrasil.sock'
+yggdrasil::ifname: '/dev/tun0'
+yggdrasil::ifmtu: 32767
