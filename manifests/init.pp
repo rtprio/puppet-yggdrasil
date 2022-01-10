@@ -14,5 +14,5 @@ class yggdrasil(
 
   contain 'yggdrasil::packages'
   contain 'yggdrasil::config'
-
+  contain 'yggdrasil::service'
 }
