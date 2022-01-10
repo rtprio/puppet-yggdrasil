@@ -1,1 +1,10 @@
 yggdrasil::config_file: '/usr/local/etc/yggdrasil.conf'
+yggdrasil::ifname: 'tun0'
+
+yggdrasil::listen: []
+yggdrasil::peers: []
+yggdrasil::allowedpublickeys: []
+yggdrasil::interfacepeers: []
+yggdrasil::publickey: '123455'
+yggdrasil::privatekey: abcdefg
+

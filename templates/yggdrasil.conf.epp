@@ -59,12 +59,12 @@
 
   # Local network interface name for TUN adapter, or "auto" to select
   # an interface automatically, or "none" to run without TUN.
-  IfName: /dev/tun0
+  IfName: <%= $yggdrasil::ifname %>
 
   # Maximum Transmission Unit (MTU) size for your local TUN interface.
   # Default is the largest supported size for your platform. The lowest
   # possible value is 1280.
-  IfMTU: 32767
+  IfMTU: <%= $yggdrasil::ifmtu %>
 
   # By default, nodeinfo contains some defaults including the platform,
   # architecture and Yggdrasil version. These can help when surveying
