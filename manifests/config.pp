@@ -10,9 +10,9 @@ class yggdrasil::config {
     group   => 0,
   }
 
-  $json = loadjson("${yggvar}/yggdrasil.generated.json")
-  $generated_public_key = $json['PublicKey']
-  $generated_private_key = $json['PrivateKey']
+  # $json = loadjson("${yggvar}/yggdrasil.generated.json")
+  $generated_public_key = '123'
+  $generated_private_key = '345'
 
   file { $yggdrasil::config_file:
     ensure  => file,
