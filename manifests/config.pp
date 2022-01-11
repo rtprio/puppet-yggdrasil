@@ -7,7 +7,7 @@ class yggdrasil::config {
   exec { 'generate config':
     command => "yggdrasil -json -genconf > ${yggvar}/yggdrasil.generated.json",
     path    => "/usr/bin:/usr/local/bin",
-    creates => "$yggvar/yggdrasil.generated.json",
+    creates => "${yggvar}/yggdrasil.generated.json",
     user    => 0,
     group   => 0,
   }
