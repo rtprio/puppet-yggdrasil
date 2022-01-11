@@ -19,9 +19,9 @@ class yggdrasil(
   contain 'yggdrasil::service'
 
   Class['yggdrasil::install']
-    -> Class['yggdrasil::keys']
-    -> Class['yggdrasil::config']
-    -> Class['yggdrasil::service']
+    ~> Class['yggdrasil::keys']
+    ~> Class['yggdrasil::config']
+    ~> Class['yggdrasil::service']
 
 
 }

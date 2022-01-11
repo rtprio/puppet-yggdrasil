@@ -1,14 +1,17 @@
 #
-class yggdrasil::keys (
-  $tmp = $yggdrasil::tmp
-) inherits yggdrasil {
+class yggdrasil::keys {
 
-  file { $yggdrasil::tmp: ensure => directory }
+  file { "${puppet_vardir}/yggdrasil":
+    ensure => directory,
+    owner  => 0,
+    group  => 0,
+    mode   => '0700',
+  }
 
   exec { 'generate keys':
-    command     => "yggdrasil -json -genconf > ${yggdrasil::tmp}/yggdrasil.generated.json",
+    command     => "yggdrasil -json -genconf > ${puppet_vardir}/yggdrasil/yggdrasil.generated.json",
     path        => '/usr/bin:/usr/local/bin',
-    creates     => "${yggdrasil::tmp}/yggdrasil.generated.json",
+    creates     => "${puppet_vardir}/yggdrasil/yggdrasil.generated.json",
     user        => 0,
     group       => 0,
   }

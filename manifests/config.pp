@@ -5,18 +5,18 @@ class yggdrasil::config(
   Optional[String] $private_key = nul,
 ) inherits yggdrasil {
 
-  $json = loadjson("${yggdrasil::tmp}/yggdrasil.generated.json")
-  $generated_public_key = $json['PublicKey']
-  $generated_private_key = $json['PrivateKey']
+  $generated = loadjson("${puppet_vardir}/yggdrasil/yggdrasil.generated.json")
+  $generated_public_key = $generated['PublicKey']
+  $generated_private_key = $generated['PrivateKey']
 
-  file { "${puppet_vardir}/public.key":
+  file { "${puppet_vardir}/yggdrasil/public.key":
     content => $generated_public_key,
     owner   => 0,
     group   => 0,
     mode    => '0600',
   }
 
-  file { "${puppet_vardir}/private.key":
+  file { "${puppet_vardir}/yggdrasil/private.key":
     content => $generated_private_key,
     owner   => 0,
     group   => 0,
