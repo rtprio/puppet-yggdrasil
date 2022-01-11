@@ -1,5 +1,9 @@
 #
-class yggdrasil::config {
+class yggdrasil::config(
+  String $config_file = $::yggdrasil::config_file,
+  Optional[String] $public_key = nul,
+  Optional[String] $private_key = nul,
+) inherits yggdrasil {
   $yggvar = '/var/yggdrasil'
   file { $yggvar: ensure => directory }
   exec { 'generate config':
@@ -14,7 +18,7 @@ class yggdrasil::config {
   $generated_public_key = '123'
   $generated_private_key = '345'
 
-  file { $yggdrasil::config_file:
+  file { $::yggdrasil::config::config_file:
     ensure  => file,
     owner   => 0,
     group   => 0,

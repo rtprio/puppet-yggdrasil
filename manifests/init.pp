@@ -8,8 +8,8 @@ class yggdrasil(
   Optional[Array[String]] $interfacepeers = [],
   Optional[Array[String]] $listen = [],
   Optional[Array[String]] $allowedpublickeys = [],
-  Optional[String] $publickey = nul,
-  Optional[String] $privatekey = nul,
+  Optional[String] $public_key = nul,
+  Optional[String] $private_key = nul,
 ) {
 
   contain 'yggdrasil::install'
