@@ -16,7 +16,7 @@ class yggdrasil(
   contain 'yggdrasil::config'
   contain 'yggdrasil::service'
 
-  Class['yggdrasil::packages'] ->
-    Class['yggdrasil::config'] ->
-    Class['yggdrasil::service']
+  Class['yggdrasil::packages']
+    -> Class['yggdrasil::config']
+    -> Class['yggdrasil::service']
 }

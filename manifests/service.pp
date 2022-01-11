@@ -5,8 +5,8 @@ class yggdrasil::service(
   Boolean $yggdrasil_enable = true,
 ) {
   service { 'yggdrasil':
-    ensure => $yggdrasil_running,
-    enable => $yggdrasil_enable,
+    ensure => $yggdrasil::yggdrasil_running,
+    enable => $yggdrasil::yggdrasil_enable,
   }
 
 }
