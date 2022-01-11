@@ -12,11 +12,11 @@ class yggdrasil(
   Optional[String] $privatekey = nul,
 ) {
 
-  contain 'yggdrasil::packages'
+  contain 'yggdrasil::install'
   contain 'yggdrasil::config'
   contain 'yggdrasil::service'
 
-  Class['yggdrasil::packages']
+  Class['yggdrasil::install']
     -> Class['yggdrasil::config']
     -> Class['yggdrasil::service']
 }

@@ -1,6 +1,6 @@
-# class yggdrasil::packages
+# class yggdrasil::install
 #
-class yggdrasil::packages {
+class yggdrasil::install {
 
   package { 'yggdrasil':
     ensure => installed
