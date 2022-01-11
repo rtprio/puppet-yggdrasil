@@ -5,5 +5,4 @@ describe 'yggdrasil' do
   it { is_expected.to contain_class('yggdrasil::install') }
   it { is_expected.to contain_class('yggdrasil::config') }
   it { is_expected.to contain_class('yggdrasil::service') }
-  
 end
