@@ -1,33 +1,33 @@
 ---
 kind: pipeline
-name: syntax
+name: puppet7
 
 platform:
   os: linux
   arch: amd64
 
 steps:
-- name: validate lint check rubocop-Ruby 2.7.2-Puppet ~> 7
+- name: 2.7.2-Puppet ~> 7
   image: ruby:2.7.2
   commands:
   - bundle install
   - bundle exec rake validate lint check rubocop
+  - bundle exec rake parallel_spec
 
 ---
 kind: pipeline
-name: unit
+name: puppet6
 
 platform:
   os: linux
   arch: amd64
 
 steps:
-- name: parallel_spec-Ruby 2.7.2-Puppet ~> 7
-  image: ruby:2.7.2
+- name: 2.5.6-Puppet ~> 6
+  image: ruby:2.5.7
+
   commands:
   - bundle install
+  - bundle exec rake validate lint check rubocop
   - bundle exec rake parallel_spec
-
-depends_on:
-- syntax
 
