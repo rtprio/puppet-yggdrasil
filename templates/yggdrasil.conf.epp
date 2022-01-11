@@ -48,7 +48,7 @@
   # from. If left empty/undefined then all connections will be allowed
   # by default. This does not affect outgoing peerings, nor does it
   # affect link-local peers discovered via multicast.
-  AllowedPublicKeys: []
+  AllowedPublicKeys: [<%= $yggdrasil::config::allowedpublickeys.join(', ') -%>]
 
   # Your public key. Your peers may ask you for this to put
   # into their AllowedPublicKeys configuration.

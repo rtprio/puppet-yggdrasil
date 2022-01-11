@@ -1,6 +1,7 @@
 #
 class yggdrasil::config(
   String $config_file = $::yggdrasil::config_file,
+  $allowedpublickeys = $::yggdrasil::allowedpublickeys,
   Optional[String] $public_key = nul,
   Optional[String] $private_key = nul,
 ) inherits yggdrasil {
