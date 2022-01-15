@@ -2,7 +2,6 @@
 class yggdrasil(
   String $config_file,
   String $adminlisten,
-  String $tmp,
   Optional[String] $ifname = '/dev/tun0',
   Optional[Integer] $ifmtu = 32767,
   Optional[Array[String]] $peers = [],

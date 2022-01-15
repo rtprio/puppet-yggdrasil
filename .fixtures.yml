@@ -3,4 +3,12 @@
 ---
 fixtures:
   forge_modules:
-     stdlib: "puppetlabs/stdlib"
+    augeas_core:
+      repo: "puppetlabs-augeas_core"
+      ref: "1.2.0"
+    augeas:
+      repo: "camptocamp-augeas"
+      ref: "1.9.0"
+    stdlib:
+      repo: "puppetlabs-stdlib"
+      ref: "8.0.0"
