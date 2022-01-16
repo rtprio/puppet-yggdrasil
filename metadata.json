@@ -7,7 +7,14 @@
   "source": "https://github.com/rtprio/puppet-yggdrasil.git",
   "project_page": "https://github.com/rtprio/puppet-yggdrasil",
   "dependencies": [
-
+    {
+      "name": "puppetlabs/stdlib",
+      "version_requirement": ">= 4.13.0 < 9.0.0"
+    },
+    {
+      "name": "camptocamp/augeas",
+      "version_requirement": ">=1.0.0 < 2.0.0"
+    }
   ],
   "operatingsystem_support": [
     {
@@ -21,7 +28,16 @@
       "operatingsystemrelease": [
         "18.04"
       ]
+    },
+    {
+      "operatingsystem": "FreeBSD",
+      "operatingsystemrelease": [
+        "12",
+        "13",
+        "14"
+      ]
     }
+
   ],
   "requirements": [
     {
