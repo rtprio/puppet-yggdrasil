@@ -31,3 +31,15 @@ steps:
   - bundle exec rake validate lint check rubocop
   - bundle exec rake parallel_spec
 
+---
+kind: pipeline
+name: integration
+
+steps:
+- name: include
+  image: puppet/puppet-agent:latest
+  commands:
+  - cd ..
+  - puppet apply --modulepath=`pwd` -e "include yggdrasil"
+
+
