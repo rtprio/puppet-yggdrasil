@@ -1,4 +1,9 @@
 #
+# @author Elliot Schlegelmilch
+# @example include yggdrasil
+#
+# @param [String] config_file
+# 	 path to config file, hiera default
 class yggdrasil(
   String $config_file,
   String $adminlisten,

@@ -1,10 +1,7 @@
 #
 # class yggdrasil::config
 #
-class yggdrasil::config(
-  String $config_file = $::yggdrasil::config_file,
-  $allowedpublickeys = $::yggdrasil::allowedpublickeys,
-) inherits yggdrasil {
+class yggdrasil::config inherits yggdrasil {
 
   file { $::yggdrasil::config::config_file:
     ensure => present,
