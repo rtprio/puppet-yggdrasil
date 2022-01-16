@@ -2,9 +2,10 @@
   "name": "rtprio-yggdrasil",
   "version": "0.1.0",
   "author": "Elliot Schlegelmilch",
-  "summary": "",
+  "summary": "Installs and manages the yggdrasil daemon.",
   "license": "MIT",
-  "source": "",
+  "source": "https://github.com/rtprio/puppet-yggdrasil.git",
+  "project_page": "https://github.com/rtprio/puppet-yggdrasil",
   "dependencies": [
 
   ],
