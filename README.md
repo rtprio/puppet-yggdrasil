@@ -1,7 +1,8 @@
 # yggdrasil
 
-Welcome to your new module. A short overview of the generated parts can be found
-in the [PDK documentation][1].
+This module installs and configures the linux client for
+Yggdrasil. Yggdrasil is an implementation of a routed end-to-end encrypted IPv6 network.
+[yggdrasil-network.github.io](yggdrasil-network.github.io)
 
 The README template below provides a starting point with details about what
 information to include in your README.
