@@ -1,4 +1,6 @@
 #
+# @summary creates initial config file
+#
 class yggdrasil::keys {
 
   exec { 'generate config':
