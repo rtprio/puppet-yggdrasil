@@ -1,9 +1,14 @@
 #
 # @author Elliot Schlegelmilch
-# @example include yggdrasil
+#
+# @example
+#     include yggdrasil
+#
+# @see https://yggdrasil-network.github.io/
 #
 # @param [String] config_file
 # 	 path to config file, hiera default
+#
 class yggdrasil(
   String $config_file,
   String $adminlisten,
