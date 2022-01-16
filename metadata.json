@@ -1,5 +1,5 @@
 {
-  "name": "rtprio-yggdrasil",
+  "name": "semaphore-yggdrasil",
   "version": "0.1.0",
   "author": "Elliot Schlegelmilch",
   "summary": "Installs and manages the yggdrasil daemon.",
