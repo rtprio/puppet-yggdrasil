@@ -12,3 +12,6 @@ fixtures:
     stdlib:
       repo: "puppetlabs-stdlib"
       ref: "8.0.0"
+    apt:
+      repo: "puppetlabs-apt"
+      ref: "8.3.0"

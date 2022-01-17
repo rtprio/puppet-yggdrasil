@@ -11,8 +11,8 @@ class yggdrasil::service(
 ) {
 
   service { 'yggdrasil':
-    ensure => $yggdrasil::service::yggdrasil_running,
-    enable => $yggdrasil::service::yggdrasil_enable,
+    ensure => $yggdrasil_ensure,
+    enable => $yggdrasil_enable,
   }
 
 }
