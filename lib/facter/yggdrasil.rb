@@ -14,8 +14,8 @@ Facter.add(:yggdrasil) do
         myip = myself.keys[0]
         myself[myip]['ip'] = myip
         myself[myip]
-      rescue => error
-        Hash.new
+      rescue
+        {}
       end
     end
   end
