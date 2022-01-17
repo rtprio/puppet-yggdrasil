@@ -43,7 +43,7 @@ class yggdrasil::config inherits yggdrasil {
 
   augeas { 'adminlisten':
     changes => [
-      "set dict/entry[. = 'AdminListen']/string $::yggdrasil::adminlisten",
+      "set dict/entry[. = 'AdminListen']/string ${::yggdrasil::adminlisten}",
     ],
   }
 
@@ -63,7 +63,7 @@ class yggdrasil::config inherits yggdrasil {
   if !empty($::yggdrasil::ifname) {
     augeas { 'ifname':
       changes => [
-        "set dict/entry[. = 'IfName']/string $::yggdrasil::ifname",
+        "set dict/entry[. = 'IfName']/string ${::yggdrasil::ifname}",
       ],
     }
   }
@@ -71,7 +71,7 @@ class yggdrasil::config inherits yggdrasil {
   if !empty("${::yggdrasil::ifmtu}") {
     augeas { 'ifmtu':
       changes => [
-        "set dict/entry[. = 'IfMTU']/number $::yggdrasil::ifmtu",
+        "set dict/entry[. = 'IfMTU']/number ${::yggdrasil::ifmtu}",
       ],
     }
   }
@@ -81,7 +81,7 @@ class yggdrasil::config inherits yggdrasil {
     changes => [
       "touch dict/entry[. = 'NodeInfo']/dict",
       "set dict/entry[. = 'NodeInfo']/dict/entry[1] fqdn",
-      "set dict/entry[. = 'NodeInfo']/dict/entry[1]/string ${fqdn}",
+      "set dict/entry[. = 'NodeInfo']/dict/entry[1]/string ${facts['networking']['fqdn']}",
     ],
   }
 }

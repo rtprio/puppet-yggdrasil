@@ -14,29 +14,14 @@ describe 'yggdrasil' do
   it { is_expected.to contain_class('yggdrasil::config') }
   it { is_expected.to contain_class('yggdrasil::service') }
 
-
-  let(:facts) { 
-
-{
+  let(:facts) { {
   "os": {
     "distro": {
       "codename": "Ootpa",
-      "description": "Red Hat Enterprise Linux release 8.5 (Ootpa)",
       "id": "RedHatEnterprise",
-      "release": {
-        "full": "8.5",
-        "major": "8",
-        "minor": "5"
-      }
-    },
-    "family": "RedHat",
-    "hardware": "x86_64",
-    "name": "OracleLinux",
-    "release": {
-      "full": "8.5",
-      "major": "8",
-      "minor": "5"
-    },
+      "release": { "full": "8.5", "major": "8", "minor": "5" } },
+    "family": "RedHat", "hardware": "x86_64", "name": "OracleLinux",
+    "release": { "full": "8.5", "major": "8", "minor": "5" },
   }
 } }
 
