@@ -39,9 +39,7 @@ steps:
 - name: include
   image: puppet/puppet-agent:latest
   commands:
-  - cd ..
-  - ls
-  - pwd
-  - puppet apply --modulepath=`pwd` -e "include yggdrasil"
+  - bundle exec rake spec_prep
+  - puppet apply --modulepath=`spec/fixtures/modules` -e "include yggdrasil"
 
 
