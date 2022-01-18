@@ -1,5 +1,6 @@
 #
 # class yggdrasil::config
+# @private
 #
 class yggdrasil::config inherits yggdrasil {
 
