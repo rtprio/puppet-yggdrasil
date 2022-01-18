@@ -16,8 +16,8 @@
 #   the value "none" instead.
 #
 # @param ifname
-#   Local network interface name for TUN adapter, or "auto" to
-#   select an interface automatically, or "none" to run without
+#   Local network interface name for TUN adapter, or `auto` to
+#   select an interface automatically, or `none` to run without
 #   TUN.
 #
 # @param ifmtu
@@ -27,23 +27,23 @@
 #
 # @param peers
 #   List of connection strings for outbound peer connections in
-#   URI format, e.g. tls://a.b.c.d:e . These connections will obey the
+#   URI format, e.g. `tls://a.b.c.d:e`. These connections will obey the
 #   operating system routing table, therefore you should use this
 #   section when you may connect via different interfaces.
 #
 # @param interfacepeers
-#   List of connection strings for outbound peer connections in
-#   URI format, arranged by source interface, e.g. { "eth0": [
-#   tls://a.b.c.d:e ] }.  Note that SOCKS peerings will NOT be
-#   affected by this option and should go in the "Peers" section
-#   instead.
+#   List of connection strings for outbound peer connections in URI
+#   format, arranged by source interface, e.g.
+#   `{ "eth0": [ tls://a.b.c.d:e ] }`.  Note that SOCKS peerings
+#   will NOT be affected by this option and should go in the "Peers"
+#   section instead.
 #
 # @param listen
 #   Listen addresses for incoming connections. You will need to add
 #   listeners in order to accept incoming peerings from non-local
 #   nodes.  Multicast peer discovery will work regardless of any
 #   listeners set here. Each listener should be specified in URI
-#   format as above, e.g.  tls://0.0.0.0:0 or tls://[::]:0 to listen
+#   format as above, e.g.  `tls://0.0.0.0:0` or `tls://[::]:0` to listen
 #   on all interfaces.
 #
 # @param allowedpublickeys
