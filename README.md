@@ -1,11 +1,11 @@
 # yggdrasil
 
 This module installs and configures the linux client for
-Yggdrasil. Yggdrasil is an implementation of a routed end-to-end encrypted IPv6 network.
-[yggdrasil-network.github.io](yggdrasil-network.github.io)
-
-The README template below provides a starting point with details about what
-information to include in your README.
+Yggdrasil. Yggdrasil is an implementation of a routed end-to-end
+encrypted IPv6 network.
+[yggdrasil-network.github.io](yggdrasil-network.github.io) Node can be
+connected with multicast on the same network. Nodes can also tcp or
+tls connctions over existing ipv4 or ipv6 networks.
 
 ## Table of Contents
 
@@ -30,31 +30,38 @@ is what they want.
 
 ### What yggdrasil affects **OPTIONAL**
 
-If it's obvious what your module touches, you can skip this section. For
-example, folks can probably figure out that your mysql_instance module affects
-their MySQL instances.
+If the `yggdrasil::allowedpublickeys` is empty, any yggdrasil host can
+connect, potentially joining your node to a larger network, or
+exposing your network to unknown traffic.
 
-If there's more that they should know about, though, this is the place to
-mention:
-
-* Files, packages, services, or operations that the module will alter, impact,
-  or execute.
-* Dependencies that your module automatically installs.
-* Warnings or other important notices.
+If you advertise the routes for 300::/7, any host accepting this route will
+gain access to your network.
 
 ### Setup Requirements **OPTIONAL**
 
-If your module requires anything extra before setting up (pluginsync enabled,
-another module, etc.), mention it here.
-
-If your most recent release breaks compatibility or requires particular steps
-for upgrading, you might want to include an additional "Upgrading" section here.
+This module requires stdlib and augeas.
 
 ### Beginning with yggdrasil
 
-The very basic steps needed for a user to get the module up and running. This
-can include setup steps, if necessary, or it can be an example of the most basic
-use of the module.
+The easiest way to get started is to simply include the module.
+The node will find other peers on the same network via multicast.
+```
+include yggdrasil
+```
+
+This hiera lets hosts with two keys connect, and will try to establish
+connections with two peers.
+
+```
+yggdrasil::listen:
+  - tls://0.0.0.0:8827
+yggdrasil::peers:
+  - tls://11.11.22.7:18817
+  - tls://192.168.200.11:10017
+yggdrasil::allowedpublickeys:
+  - 0000124fbc54ed7f4be2733b6f7676ef87e46bab9adccbbfe4f3d99c5a56a75e
+  - 0012010278a0599e06bee81ec46ca44646bf2c30d5037b7d50ec81ae195cf546
+```
 
 ## Usage
 
