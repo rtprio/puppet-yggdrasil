@@ -1,6 +1,8 @@
 #
 # @summary creates initial config file
 #
+# This will fail if the file exists and is not json.
+#
 class yggdrasil::keys {
 
   exec { 'generate config':

@@ -1,4 +1,8 @@
-# class yggdrasil::repo
+# @summary Creates packages repositories for supported systems.
+#
+# At present, there is only a debian repo.
+# There is no yum repo at present, it will fail.
+#
 #
 class yggdrasil::repo {
 
