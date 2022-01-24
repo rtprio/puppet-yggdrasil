@@ -1,3 +1,4 @@
+---
 yggdrasil::config_file: '/usr/local/etc/yggdrasil.conf'
 yggdrasil::ifname: 'tun0'
 

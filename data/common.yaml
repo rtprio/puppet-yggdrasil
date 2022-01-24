@@ -1,3 +1,4 @@
+---
 yggdrasil::config_file: '/etc/yggdrasil.conf'
 yggdrasil::adminlisten: 'unix:///var/run/yggdrasil.sock'
 yggdrasil::ifname: auto
