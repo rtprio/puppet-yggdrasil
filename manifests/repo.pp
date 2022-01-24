@@ -18,7 +18,7 @@ class yggdrasil::repo {
   }
 
   if $facts['os']['family'] in ['RedHat', 'CentOS'] {
-    err("repo support for '${facts['os']['family']}' not implemented yet")
+    err("no repo exists for '${facts['os']['family']}'.")
   }
 
 }
