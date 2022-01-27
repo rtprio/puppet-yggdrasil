@@ -31,13 +31,6 @@
 #   operating system routing table, therefore you should use this
 #   section when you may connect via different interfaces.
 #
-# @param interfacepeers
-#   List of connection strings for outbound peer connections in URI
-#   format, arranged by source interface, e.g.
-#   `{ "eth0": [ tls://a.b.c.d:e ] }`.  Note that SOCKS peerings
-#   will NOT be affected by this option and should go in the "Peers"
-#   section instead.
-#
 # @param listen
 #   Listen addresses for incoming connections. You will need to add
 #   listeners in order to accept incoming peerings from non-local
@@ -58,7 +51,6 @@ class yggdrasil(
   Optional[String] $ifname = '/dev/tun0',
   Optional[Integer] $ifmtu = 32767,
   Optional[Array[String]] $peers = [],
-  Optional[Array[String]] $interfacepeers = [],
   Optional[Array[String]] $listen = [],
   Optional[Array[String]] $allowedpublickeys = [],
 ) {

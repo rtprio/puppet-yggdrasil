@@ -5,4 +5,3 @@ yggdrasil::ifname: 'tun0'
 yggdrasil::listen: []
 yggdrasil::peers: []
 yggdrasil::allowedpublickeys: []
-yggdrasil::interfacepeers: []
