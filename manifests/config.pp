@@ -15,6 +15,7 @@ class yggdrasil::config inherits yggdrasil {
     incl    => $::yggdrasil::config::config_file,
     lens    => 'json.lns',
     require => File[$::yggdrasil::config::config_file],
+    notify  => Class['yggdrasil::service'],
   }
 
   #
@@ -72,12 +73,15 @@ class yggdrasil::config inherits yggdrasil {
     }
   }
 
-  # TODO: read from hiera
-  augeas { 'nodeinfo':
-    changes => [
-      "touch dict/entry[. = 'NodeInfo']/dict",
-      "set dict/entry[. = 'NodeInfo']/dict/entry[1] fqdn",
-      "set dict/entry[. = 'NodeInfo']/dict/entry[1]/string ${facts['networking']['fqdn']}",
-    ],
+  $::yggdrasil::nodeinfo.each |$index, $value| {
+    $i = Integer.new($::yggdrasil::nodeinfo.keys().index($index)) +1
+    augeas { "nodeinfo ${index}":
+      changes => [
+        "touch dict/entry[. = 'NodeInfo']/dict",
+        "set dict/entry[. = 'NodeInfo']/dict/entry[${i}] $index",
+        "set dict/entry[. = 'NodeInfo']/dict/entry[${i}]/string ${value}",
+      ],
+    }
   }
+
 }
