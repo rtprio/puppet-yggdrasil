@@ -24,16 +24,16 @@ class yggdrasil::config inherits yggdrasil {
   # }
 
   $::yggdrasil::peers.each |$index, $value| {
-  # list is 0 indexed, augeas is 1 indexed.
-  $i = Integer.new($index) +1
+    # list is 0 indexed, augeas is 1 indexed.
+    $i = Integer.new($index) +1
     augeas { "Peers ${$value}":
       changes => [ "set dict/entry[. = 'Peers']/array/string[${i}] ${value}" ],
     }
   }
 
   $::yggdrasil::listen.each |$index, $value| {
-  # list is 0 indexed, augeas is 1 indexed.
-  $i = Integer.new($index) +1
+    # list is 0 indexed, augeas is 1 indexed.
+    $i = Integer.new($index) +1
     augeas { "Listen ${$value}":
       changes => [ "set dict/entry[. = 'Listen']/array/string[${i}] ${value}" ],
     }
