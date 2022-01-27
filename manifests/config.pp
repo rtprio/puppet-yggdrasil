@@ -45,8 +45,6 @@ class yggdrasil::config inherits yggdrasil {
     ],
   }
 
-  # TODO: MulticastInterfaces
-
   $::yggdrasil::allowedpublickeys.each |$index, $value| {
   # list is 0 indexed, augeas is 1 indexed.
     $i = Integer.new($index) +1
