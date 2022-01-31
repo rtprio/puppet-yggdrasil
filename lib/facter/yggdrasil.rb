@@ -23,6 +23,7 @@ Facter.add(:yggdrasil) do
     interfaces.each do |_interface, info|
       bindings = info['bindings6']
 
+      next unless bindings
       bindings.each do |binding|
         firstbits = binding['network'].split(':')[0].to_i(16)
 
