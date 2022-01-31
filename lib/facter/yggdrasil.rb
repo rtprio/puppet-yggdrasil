@@ -18,33 +18,26 @@ Facter.add(:yggdrasil) do
       rescue
         message
       end
-    end #which 
+    end # which
 
     interfaces = Facter.value(:networking)['interfaces']
-    message['present'] = "" 
-    interfaces.each do |interface, info|
+    message['present'] = ''
+    interfaces.each do |_interface, info|
       bindings = info['bindings6']
-      
-      bindings.each do |binding |
 
+      bindings.each do |binding|
         firstbits = binding['network'].split(':')[0].to_i(16)
 
-        if firstbits >= 0x0200 and firstbits < 0x0300
+        if (firstbits >= 0x0200) && (firstbits < 0x0300)
           # do we need an additional fact here?
           message['derived_ip'] = binding['address']
         end
-        if firstbits >= 0x0300 and firstbits < 0x0400
+        if (firstbits >= 0x0300) && (firstbits < 0x0400)
           message['routed_ip'] = binding['address']
         end
-      end #each binding
-      
-      
+      end # each binding
+    end # interfaces.each
 
-    end #interfaces.each
-
-
-
-    
     message
-  end #setcode do
+  end # setcode do
 end # Facter.add
