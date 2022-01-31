@@ -16,12 +16,10 @@ Facter.add(:yggdrasil) do
         myself[myip]['ip'] = myip
         message = myself[myip]
       rescue
-        message
       end
     end # which
 
     interfaces = Facter.value(:networking)['interfaces']
-    message['present'] = ''
     interfaces.each do |_interface, info|
       bindings = info['bindings6']
 
