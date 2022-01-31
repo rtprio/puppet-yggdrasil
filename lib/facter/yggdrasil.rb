@@ -16,6 +16,7 @@ Facter.add(:yggdrasil) do
         myself[myip]['ip'] = myip
         message = myself[myip]
       rescue
+        message = {}
       end
     end # which
 
