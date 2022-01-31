@@ -4,6 +4,7 @@ Facter.add(:yggdrasil) do
   confine { Facter.value(:kernel) != 'windows' }
 
   setcode do
+    message = {}
     if Facter::Util::Resolution.which('yggdrasilctl')
       output = Facter::Util::Resolution.exec('yggdrasilctl -json getself')
       # output is { "self" :{ "<ip>": { info ...
@@ -13,10 +14,37 @@ Facter.add(:yggdrasil) do
         myself = json['self']
         myip = myself.keys[0]
         myself[myip]['ip'] = myip
-        myself[myip]
+        message = myself[myip]
       rescue
-        {}
+        message
       end
-    end
-  end
-end
+    end #which 
+
+    interfaces = Facter.value(:networking)['interfaces']
+    message['present'] = "" 
+    interfaces.each do |interface, info|
+      bindings = info['bindings6']
+      
+      bindings.each do |binding |
+
+        firstbits = binding['network'].split(':')[0].to_i(16)
+
+        if firstbits >= 0x0200 and firstbits < 0x0300
+          # do we need an additional fact here?
+          message['derived_ip'] = binding['address']
+        end
+        if firstbits >= 0x0300 and firstbits < 0x0400
+          message['routed_ip'] = binding['address']
+        end
+      end #each binding
+      
+      
+
+    end #interfaces.each
+
+
+
+    
+    message
+  end #setcode do
+end # Facter.add
