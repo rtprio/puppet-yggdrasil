@@ -53,7 +53,7 @@ class yggdrasil(
   Optional[Array[String]] $peers = [],
   Optional[Array[String]] $listen = [],
   Optional[Array[String]] $allowedpublickeys = [],
-  Optional[Hash] $nodeinfo,
+  Optional[Hash] $nodeinfo = {},
 ) {
 
   contain 'yggdrasil::install'
