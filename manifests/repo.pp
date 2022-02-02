@@ -1,7 +1,7 @@
 # @summary Creates packages repositories for supported systems.
 #
 # At present, there is only a debian repo.
-# There is no yum repo at present, it will fail.
+# There is no yum repo at present, it will warn.
 #
 #
 class yggdrasil::repo {
@@ -22,7 +22,7 @@ class yggdrasil::repo {
     }
 
     if $facts['os']['family'] in ['RedHat', 'CentOS'] {
-      fail("no repo exists for '${facts['os']['family']}'.")
+      warning("no repo exists for '${facts['os']['family']}'.")
     }
   }
 }
