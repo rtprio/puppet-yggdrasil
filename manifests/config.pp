@@ -77,6 +77,7 @@ class yggdrasil::config inherits yggdrasil {
     $i = Integer.new($::yggdrasil::nodeinfo.keys().index($index)) +1
     augeas { "nodeinfo ${index}":
       changes => [
+        "rm dict/entry[. = 'NodeInfo']",
         "touch dict/entry[. = 'NodeInfo']/dict",
         "set dict/entry[. = 'NodeInfo']/dict/entry[${i}] $index",
         "set dict/entry[. = 'NodeInfo']/dict/entry[${i}]/string ${value}",
